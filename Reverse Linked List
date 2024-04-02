@@ -1,0 +1,14 @@
+class Solution(object):
+    def reverseList(self, head):
+        if head is None:
+            return head
+        curr=head
+        prev=None
+        nex=curr.next
+        while nex is not None:
+            curr.next=prev
+            prev=curr
+            curr=nex
+            nex=curr.next
+        curr.next=prev
+        return curr
