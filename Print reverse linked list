@@ -1,0 +1,10 @@
+def reverse(llist):
+    curr=llist
+    prev=None
+    nex=curr.next
+    while nex is not None:
+        curr.next=prev
+        prev=curr
+        curr=nex
+        nex=curr.next
+    curr.next=prev
