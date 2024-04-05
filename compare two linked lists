@@ -1,0 +1,13 @@
+def compare_lists(llist1, llist2):
+    lst=[]
+    while llist1 is not None:
+        lst.append(llist1.data)
+        llist1=llist1.next
+    lst2=[]
+    while llist2 is not None:
+        lst2.append(llist2.data)
+        llist2=llist2.next
+    if lst==lst2:
+        return 1
+    else:
+        return 0
