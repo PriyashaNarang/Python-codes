@@ -1,0 +1,5 @@
+def reverseArray(a):
+    lst=[]
+    for i in range(0,len(a),1):
+        lst.insert(0,a[i])
+    return lst
