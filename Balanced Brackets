@@ -1,0 +1,21 @@
+def isBalanced(s):
+    lst=[]
+    for i in s:
+        if i in '({[':
+            lst.append(i)
+        elif i==')':
+            if len(lst)==0 or lst[-1]!='(':
+                return "NO"
+            lst.pop()
+        elif i=='}':
+            if len(lst)==0 or lst[-1]!='{':
+                return "NO"
+            lst.pop()
+        elif i==']':
+            if len(lst)==0 or lst[-1]!='[':
+                return "NO"
+            lst.pop()
+    if len(lst)==0:
+        return "YES"
+    else:
+        return "NO"
