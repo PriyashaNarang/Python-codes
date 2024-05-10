@@ -1,0 +1,10 @@
+def birthdayCakeCandles(candles):
+    g1=candles[0]
+    for i in candles:
+        if i>g1:
+            g1=i
+    c=0
+    for i in candles:
+        if i==g1:
+            c=c+1
+    return c
