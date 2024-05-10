@@ -1,0 +1,12 @@
+def compareTriplets(a, b):
+    a1=0
+    b1=0
+    for i in range(len(a)):
+        if a[i]>b[i]:
+            a1=a1+1
+        elif a[i]<b[i]:
+            b1=b1+1
+    lst=[]
+    lst.append(a1)
+    lst.append(b1)
+    return lst
