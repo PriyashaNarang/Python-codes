@@ -1,0 +1,11 @@
+def diagonalDifference(arr):
+    s1=0
+    s2=0
+    for i in range(len(arr)):
+        s1=s1+arr[i][i]
+        s2=s2+arr[i][len(arr)-i-1]
+    if s1>s2:
+        dif=s1-s2
+    else:
+        dif=s2-s1
+    return dif
