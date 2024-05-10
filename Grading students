@@ -1,0 +1,10 @@
+def gradingStudents(grades):
+    lst=[]
+    for i in grades:
+        if i<38:
+            lst.append(i)
+        elif (((i//5)*5)+5)-i<3:
+            lst.append(((i//5)*5)+5)
+        else:
+            lst.append(i)
+    return lst
