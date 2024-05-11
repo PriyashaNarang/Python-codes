@@ -1,0 +1,9 @@
+def catAndMouse(x, y, z):
+    sub1=abs(z-x)
+    sub2=abs(z-y)
+    if sub1<sub2:
+        return "Cat A"
+    elif sub1>sub2:
+        return "Cat B"
+    elif sub1==sub2:
+        return "Mouse C"
