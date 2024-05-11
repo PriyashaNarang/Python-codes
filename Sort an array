@@ -1,0 +1,33 @@
+def sortArray(self, nums):
+        def mergesort(nums):
+            if len(nums)==0 or len(nums)==1:
+                return
+            mid=len(nums)//2
+            s1=nums[0:mid]
+            s2=nums[mid::]
+            mergesort(s1)
+            mergesort(s2)
+            merge(s1,s2,nums)
+        def merge(s1,s2,nums):
+            i=0
+            j=0
+            k=0
+            while i<len(s1) and j<len(s2):
+                if s1[i]<s2[j]:
+                    nums[k]=s1[i]
+                    i+=1
+                    k+=1
+                else:
+                    nums[k]=s2[j]
+                    j+=1
+                    k+=1
+            while i<len(s1):
+                nums[k]=s1[i]
+                i+=1
+                k+=1
+            while j<len(s2):
+                nums[k]=s2[j]
+                j+=1
+                k+=1
+        mergesort(nums)
+        return nums
