@@ -1,0 +1,8 @@
+def searchMatrix(self, matrix, target):
+        res=False
+        for i in range(len(matrix)):
+            if matrix[i][0]<=target and matrix[i][len(matrix[0])-1]>=target:
+                for j in range(len(matrix[0])):
+                    if matrix[i][j]==target:
+                        res=True
+        return res
