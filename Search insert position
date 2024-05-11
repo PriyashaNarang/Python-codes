@@ -1,0 +1,20 @@
+    def searchInsert(self, nums, target):
+        s=0
+        f=0
+        e=len(nums)-1
+        while s<=e:
+            mid=(s+e)//2
+            if nums[mid]==target:
+                f=1
+                return mid
+                break
+            elif nums[mid]>target:
+                e=mid-1
+            elif nums[mid]<target:
+                s=mid+1
+        if f!=1:
+            c=0
+            for i in range(len(nums)):
+                if nums[i]<target:
+                    c=c+1
+            return c
