@@ -1,0 +1,29 @@
+def searchRange(self, nums, target):
+        s=0
+        e=len(nums)-1
+        res1=-1
+        res2=-1
+        lst=[]
+        while s<=e:
+            mid=(s+e)//2
+            if nums[mid]==target:
+                res1=mid
+                e=mid-1
+            elif nums[mid]>target:
+                e=mid-1
+            elif nums[mid]<target:
+                s=mid+1
+        lst.append(res1)
+        s=0
+        e=len(nums)-1
+        while s<=e:
+            mid=(s+e)//2
+            if nums[mid]==target:
+                res2=mid
+                s=mid+1
+            elif nums[mid]>target:
+                e=mid-1
+            elif nums[mid]<target:
+                s=mid+1
+        lst.append(res2)
+        return lst
