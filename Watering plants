@@ -1,0 +1,13 @@
+def wateringPlants(self, plants, capacity):
+        k=capacity
+        c=0
+        for i in range(len(plants)):
+            if k>=plants[i]:
+                c=c+1
+                k=k-plants[i]
+            else:
+                c=c+i
+                k=capacity
+                c=c+1+i
+                k=k-plants[i]
+        return c
