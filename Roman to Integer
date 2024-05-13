@@ -1,0 +1,24 @@
+def romanToInt(self, s):
+        s=s.replace('IV','IIII')
+        s=s.replace('IX','VIIII')
+        s=s.replace('XL','XXXX')
+        s=s.replace('XC','LXXXX')
+        s=s.replace('CD','CCCC')
+        s=s.replace('CM','DCCCC')
+        count=0
+        for i in range(len(s)):
+            if s[i]=='I':
+                count=count+1
+            elif s[i]=='V':
+                count=count+5
+            elif s[i]=='X':
+                count=count+10
+            elif s[i]=='L':
+                count=count+50
+            elif s[i]=='C':
+                count=count+100
+            elif s[i]=='D':
+                count=count+500
+            elif s[i]=='M':
+                count=count+1000
+        return count
