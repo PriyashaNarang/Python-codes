@@ -1,0 +1,35 @@
+def mergeTwoLists(self, list1, list2):
+        if list1 is None and list2 is None:
+            return None
+        if list1 is None:
+            return list2
+        if list2 is None:
+            return list1
+        finalhead=None
+        finaltail=None
+        while list1 is not None and list2 is not None:
+            if list1.val<list2.val:
+                if finalhead is None:
+                    finalhead=list1
+                    finaltail=list1
+                else:
+                    finaltail.next=list1
+                    finaltail=finaltail.next
+                list1=list1.next
+            else:
+                if finalhead is None:
+                    finalhead=list2
+                    finaltail=list2
+                else:
+                    finaltail.next=list2
+                    finaltail=finaltail.next
+                list2=list2.next
+        while list1 is not None:
+            finaltail.next=list1
+            finaltail=finaltail.next
+            list1=list1.next
+        while list2 is not None:
+            finaltail.next=list2
+            finaltail=finaltail.next
+            list2=list2.next
+        return finalhead
