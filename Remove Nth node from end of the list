@@ -1,0 +1,25 @@
+def removeNthFromEnd(self, head, n):
+        def length(head):
+            count=0
+            while head is not None:
+                count=count+1
+                head=head.next
+            return count
+        if head is None:
+            return head
+        if n>=length(head):
+            head=head.next
+            return head 
+        i=0
+        j=length(head)-n
+        prev=None
+        curr=head
+        while i<j:
+            prev=curr
+            curr=curr.next
+            i=i+1
+        if prev is not None:
+            prev.next=curr.next
+        else:
+            head=curr.next
+        return head
