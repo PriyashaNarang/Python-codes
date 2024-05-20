@@ -1,0 +1,17 @@
+def isPalindrome(self, head):
+        def original(head):
+            lst1=[]
+            while head is not None:
+                lst1.append(head.val)
+                head=head.next
+            return lst1
+        def reverse(head):
+            lst2=[]
+            while head is not None:
+                lst2.insert(0,head.val)
+                head=head.next
+            return lst2
+        if original(head)==reverse(head):
+            return True
+        else:
+            return False
