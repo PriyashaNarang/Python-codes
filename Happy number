@@ -1,0 +1,16 @@
+def isHappy(self, n):
+        def sod(n):
+            s=0
+            while n!=0:
+                rem=n%10
+                s=s+(rem**2)
+                n=n//10
+            return s
+        def happy(n):
+            s=sod(n)
+            if s==1 or s==7:
+                return True
+            elif s<10:
+                return False
+            return happy(s)
+        return happy(n)
