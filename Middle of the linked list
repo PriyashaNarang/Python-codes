@@ -1,0 +1,11 @@
+def middleNode(self, head):
+        def length(head):
+            if head is None:
+                return 0
+            else:
+                return 1+length(head.next)
+        l=length(head)
+        ans=head
+        for i in range(l//2):
+            ans=ans.next
+        return ans
