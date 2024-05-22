@@ -1,0 +1,7 @@
+def runningSum(self, nums):
+        s=0
+        nums2=[]
+        for i in nums:
+            s=s+i
+            nums2.append(s)
+        return nums2
