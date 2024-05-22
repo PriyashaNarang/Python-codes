@@ -1,0 +1,11 @@
+def findMin(self, nums):
+        i=0
+        index=0
+        while i<len(nums)-1:
+            if nums[i]>nums[i+1]:
+                index=i+1
+                break
+            i+=1
+        else:
+            index=0
+        return nums[index]
