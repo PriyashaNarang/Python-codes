@@ -1,0 +1,11 @@
+def swapNodes(self, head, k):
+        first=head
+        second=head
+        for i in range(k-1):
+            first=first.next
+        curr=first
+        while curr.next is not None:
+            second=second.next
+            curr=curr.next
+        first.val,second.val=second.val,first.val
+        return head
