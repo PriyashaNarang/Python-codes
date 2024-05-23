@@ -1,0 +1,17 @@
+def addDigits(self, num):
+        def add(num):
+            s=0
+            while num!=0:
+                rem=num%10
+                s=s+rem
+                num=num//10
+            return s
+        def ans(num):
+            if num<10:
+                return num
+            s=add(num)
+            if s<10:
+                return s
+            else:
+                return ans(s)
+        return ans(num)
