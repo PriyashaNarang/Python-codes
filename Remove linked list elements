@@ -1,0 +1,11 @@
+def removeElements(self, head, val):
+        if head is None:
+            return head
+        temp = ListNode(0)
+        temp.next = head
+        prev, curr = temp, head
+        while curr:
+            if curr.val == val:prev.next = curr.next
+            else:prev = curr
+            curr = curr.next
+        return temp.next
