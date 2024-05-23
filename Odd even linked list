@@ -1,0 +1,32 @@
+def oddEvenList(self, head):
+        if head is None or head.next is None:
+            return head
+        oh=None
+        eh=None
+        ot=None
+        et=None
+        count=0
+        while head is not None:
+            if count%2==0:
+                if oh is None:
+                    oh=head
+                    ot=head
+                else:
+                    ot.next=head
+                    ot=ot.next
+            else:
+                if eh is None:
+                    eh=head
+                    et=head
+                else:
+                    et.next=head
+                    et=et.next
+            count+=1
+            head=head.next
+        if oh is None:
+            return eh
+        if eh is None:
+            return oh
+        ot.next=eh
+        et.next=None
+        return oh
