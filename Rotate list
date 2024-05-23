@@ -1,0 +1,27 @@
+def rotateRight(self, head, k):
+        def length(head):
+            if head is None:
+                return 0
+            count=0
+            while head is not None:
+                count+=1
+                head=head.next
+            return count
+        if head is None or head.next is None:
+            return head
+        slow=head
+        fast=head
+        while k>=length(head):
+            k=k%length(head)
+        if k==0 or k==length(head):
+            return head
+        for i in range(length(head)-k-1):
+            slow=slow.next
+            fast=fast.next
+        while fast.next is not None:
+            fast=fast.next
+        new=slow.next
+        slow.next=None
+        fast.next=head
+        head=new
+        return head
