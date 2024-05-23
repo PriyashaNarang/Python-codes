@@ -1,0 +1,16 @@
+def deleteDuplicates(self, head):
+        curr=head
+        prev=None
+        while curr is not None:
+            if curr.next is not None and curr.val==curr.next.val:
+                value=curr.val
+                while curr is not None and curr.val==value:
+                    curr=curr.next
+                if prev is not None:
+                    prev.next=curr
+                else:
+                    head=curr
+            else:
+                prev=curr
+                curr=curr.next
+        return head
