@@ -1,0 +1,13 @@
+def pathSum(self,root,targetSum):
+        if root is None:
+            return
+        targetSum=targetSum-root.val
+        if root.left is None and root.right is None:
+            if targetSum==0:
+                return True
+        left=self.pathSum(root.left,targetSum)
+        right=self.pathSum(root.right,targetSum)
+        return left or right
+        
+  def hasPathSum(self, root, targetSum):
+        return self.pathSum(root,targetSum)
