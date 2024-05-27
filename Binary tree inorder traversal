@@ -1,0 +1,12 @@
+def inorderTraversal(self, root):
+        lst=[]
+        def inorder(root):
+            if root is None:
+                return 
+            if root.left is not None:
+                inorder(root.left)
+            lst.append(root.val)
+            if root.right is not None:
+                inorder(root.right)
+        inorder(root)
+        return lst
