@@ -1,0 +1,10 @@
+def sortedArrayToBST(self, nums):
+        if not nums:
+            return None
+        si=0
+        ei=len(nums)-1
+        mid=(si+ei)//2
+        root=TreeNode(nums[mid])
+        root.left=self.sortedArrayToBST(nums[0:mid])
+        root.right=self.sortedArrayToBST(nums[mid+1::])
+        return root
