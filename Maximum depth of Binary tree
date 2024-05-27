@@ -1,0 +1,10 @@
+def maxDepth(self, root):
+        def depth(root):
+            if root is None:
+                return 0
+            if root.left is None and root.right is None:
+                return 1
+            leftcount=depth(root.left)
+            rightcount=depth(root.right)
+            return 1+max(leftcount,rightcount)
+        return depth(root)
