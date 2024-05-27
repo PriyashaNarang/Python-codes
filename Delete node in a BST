@@ -1,0 +1,36 @@
+def minimum(self,root):
+        if root is None:
+            return 1000000
+        left=self.minimum(root.left)
+        right=self.minimum(root.right)
+        return min(root.val,left,right)
+    def deletehelper(self,root,key):
+        if root is None:
+            return False,None
+        if root.val>key:
+            lcheck,leftnode=self.deletehelper(root.left,key)
+            root.left=leftnode
+            return lcheck,root
+        if root.val<key:
+            rcheck,rightnode=self.deletehelper(root.right,key)
+            root.right=rightnode
+            return rcheck,root
+        if root.val==key:
+            if root.left is None and root.right is None:
+                return True,None
+            elif root.left is None:
+                return True,root.right
+            elif root.right is None:
+                return True,root.left
+            else:
+                replacement=self.minimum(root.right)
+                root.val=replacement
+                checked,rightnode=self.deletehelper(root.right,replacement)
+                root.right=rightnode
+                return True,root
+    def deleteNode(self, root, key):
+        checked,rootnode=self.deletehelper(root,key)
+        if checked:
+            return rootnode
+        else:
+            return root
