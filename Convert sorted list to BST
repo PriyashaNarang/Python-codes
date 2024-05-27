@@ -1,0 +1,28 @@
+def midelement(self,head):
+        slow=head
+        fast=head
+        while fast.next and fast.next.next is not None:
+            slow=slow.next
+            fast=fast.next.next
+        return slow.val
+    def sortedListToBST(self,head):
+        if head is None:
+            return
+        if head.next is None:
+            root=TreeNode(head.val)
+            return root
+        curr=head
+        prev=None
+        mid=self.midelement(head)
+        root=TreeNode(mid)
+        while curr is not None:
+            if curr.val==mid:
+                break
+            prev=curr
+            curr=curr.next
+        temp=curr.next
+        root.right=self.sortedListToBST(temp)
+        if prev is not None:
+            prev.next=None
+            root.left=self.sortedListToBST(head)
+        return root
