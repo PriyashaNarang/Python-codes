@@ -1,0 +1,10 @@
+def insertIntoBST(self, root, val):
+        if root is None:
+            p=TreeNode(val)
+            return p
+        if root.val<=val:
+            root.right=self.insertIntoBST(root.right,val)
+            return root
+        if root.val>val:
+            root.left=self.insertIntoBST(root.left,val)
+            return root
