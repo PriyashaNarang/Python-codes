@@ -1,0 +1,15 @@
+def Balanced(self,root):
+        if root is None:
+            return 0,True
+        lh,lchecked=self.Balanced(root.left)
+        rh,rchecked=self.Balanced(root.right)
+        h=1+max(lh,rh)
+        if abs(lh-rh)>1:
+            return h,False
+        if lchecked is True and rchecked is True:
+            return h,True
+        else:
+            return h,False
+def isBalanced(self, root):
+        height,checked=self.Balanced(root)
+        return checked
