@@ -1,0 +1,13 @@
+def buildTree(self, inorder, postorder):
+        if not inorder or not postorder:
+            return None
+        root=TreeNode(postorder[-1])
+        index=inorder.index(postorder[-1])
+        leftinorder=inorder[0:index]
+        rightinorder=inorder[index+1::]
+        l=len(leftinorder)
+        leftpostorder=postorder[0:l]
+        rightpostorder=postorder[l:-1]
+        root.left=self.buildTree(leftinorder,leftpostorder)
+        root.right=self.buildTree(rightinorder,rightpostorder)
+        return root
