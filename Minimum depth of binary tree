@@ -1,0 +1,13 @@
+def depth(self,root):
+        if root is None:
+            return 2137273523
+        if root.left is None and root.right is None:
+            return 1
+        leftcount=self.depth(root.left)
+        rightcount=self.depth(root.right)
+        return 1+min(leftcount,rightcount)
+def minDepth(self, root):
+        if root is None:
+            return 0
+        else:
+            return self.depth(root)
