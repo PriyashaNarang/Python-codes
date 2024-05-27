@@ -1,0 +1,10 @@
+def postorder(self,root,lst):
+        if root is None:
+            return
+        self.postorder(root.left,lst)
+        self.postorder(root.right,lst)
+        lst.append(root.val)
+    def postorderTraversal(self, root):
+        lst=[]
+        self.postorder(root,lst)
+        return lst
