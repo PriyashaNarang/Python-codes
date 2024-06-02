@@ -1,0 +1,8 @@
+def validBST(self,root,low,high):
+        if root is None:
+            return True
+        if not low<root.val<high:
+            return False
+        return self.validBST(root.left,low,root.val) and self.validBST(root.right,root.val,high) 
+    def isValidBST(self, root):
+        return self.validBST(root,float('-inf'),float('inf'))
